@@ -1,9 +1,12 @@
 import './App.css';
+import Sidebar from './components/sidebar';
 
 function App() {
   return (
     //git remote add origin link
-    <div className="App"></div>
+    <div className="App">
+      <Sidebar/>
+    </div>
   );
 }
 
