@@ -1,33 +1,25 @@
 import React from 'react';
 import HomeIcon from '@mui/icons-material/Home';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 export const sidebarData = [
-  {
-    type: 'header',
-    title: 'Name',
-    icon: <AccountCircleIcon/>,
-  },
-  {
-    type: 'divider',
-  },
   {
     type: 'row',
     title: 'Dashboard',
     icon: <HomeIcon/>,
-    link: '/dahboard'
+    link: '/dashboard',
   },
   {
     type: 'row',
     title: 'Condition',
     icon: <CalendarViewDayIcon/>,
-    link: '/condition'
+    link: '/condition',
   },
   {
     type: 'row',
-    title: 'Dashboard2',
-    icon: <HomeIcon/>,
-    link: '/dahboard2'
+    title: 'Logout',
+    icon: <ExitToAppIcon/>,
+    link: '/login',
   }
 ]
