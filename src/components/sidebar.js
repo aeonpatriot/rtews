@@ -1,45 +1,32 @@
+import "../css/App.css";
 import React from "react";
-import "../App.css";
+import { NavLink } from "react-router-dom";
 import { sidebarData } from "./sidebarData";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function Sidebar() {
   return (
     <div className="sidebar">
-      <ul className="sidebar-list">
+      <div className="sidebar-list">
+        <li className="sidebar-header">
+          {" "}
+          <div id="icon">
+            <AccountCircleIcon />
+          </div>{" "}
+          <div id="title">Name</div>
+        </li>
+        <div>
+          <hr className="sidebar-divider"></hr>
+        </div>
         {sidebarData.map((val, key) => {
-          if (val.type === "divider") {
-            return (
-              <div><hr className="sidebar-divider"></hr></div>
-            );
-          } else if (val.type === "header") {
-            return (
-              <li
-                className="sidebar-header"
-                key={key}
-              >
-                {" "}
-                <div id="icon">{val.icon}</div>{" "}
-                <div id="title">{val.title}</div>
-              </li>
-            );
-          } else {
-            return (
-              <li
-                className="sidebar-row"
-                id={window.location.pathname === val.link ? "active" : ""}
-                key={key}
-                onClick={() => {
-                  window.location.pathname = val.link;
-                }}
-              >
-                {" "}
-                <div id="icon">{val.icon}</div>{" "}
-                <div id="title">{val.title}</div>
-              </li>
-            );
-          }
+          return (
+            <NavLink to={val.link} className="sidebar-row" key={key}>
+              {" "}
+              <div id="icon">{val.icon}</div> <div id="title">{val.title}</div>
+            </NavLink>
+          );
         })}
-      </ul>
+      </div>
     </div>
   );
 }
