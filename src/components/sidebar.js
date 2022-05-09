@@ -13,7 +13,7 @@ function Sidebar() {
           <div id="icon">
             <AccountCircleIcon />
           </div>{" "}
-          <div id="title">Name</div>
+          <div id="title">Admin</div>
         </li>
         <div>
           <hr className="sidebar-divider"></hr>

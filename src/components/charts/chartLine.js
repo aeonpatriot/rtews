@@ -20,7 +20,7 @@ export const ChartLine = () => {
   }, []);
 
   return (
-    <LineChart width={width - 400} height={400} data={vibrationData}>
+    <LineChart width={width - 700} height={350} data={vibrationData}>
       <Line type="monotone" dataKey="value" stroke="#8884d8" />
       <CartesianGrid stroke="#ccc" />
       <XAxis dataKey="time" />

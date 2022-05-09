@@ -38,7 +38,7 @@ io.on('connection', function(socket) {
 parser.on('data', function(data) {
   let current = new Date()
   console.log(data);
-  console.log(current);
+  // console.log(current);
   // if(data <= 1000) {
     io.emit('sensorData', {
       name: 'sensorData',
