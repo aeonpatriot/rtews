@@ -1,8 +1,3 @@
-// import { SerialPort } from 'serialport'
-// import { ReadlineParser } from 'serialport'
-// import { http } from 'http'
-// import { Server } from 'socket.io'
-// import { fs } from 'fs'
 const { SerialPort } = require('serialport')
 const { ReadlineParser } = require('@serialport/parser-readline')
 const http = require('http');
@@ -11,7 +6,7 @@ const fs = require('fs');
 var index = fs.readFileSync('./public/index.html');
 
 var port = new SerialPort({
-  path:'COM7',
+  path:'COM7', //Arduino UNO R3 port
   baudRate: 9600,
     dataBits: 8,
     parity: 'none',
@@ -34,18 +29,14 @@ io.on('connection', function(socket) {
   
 });
 
-
 parser.on('data', function(data) {
   let current = new Date()
   console.log(data);
-  // console.log(current);
-  // if(data <= 1000) {
     io.emit('sensorData', {
       name: 'sensorData',
       value: data,
       time: current.toLocaleTimeString()
     });
-  // }
 })
 
 app.listen(3030)
